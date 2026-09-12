@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://aodhancoyne.com/">
 <meta property="og:image" content="https://aodhancoyne.com/assets/ms-croix.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FDFBF3'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%2314120E' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="assets/ac-mark-ink.svg" type="image/svg+xml">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,6 +43,8 @@
  .flag{text-align:center;border-bottom:4px double var(--rule);padding-bottom:14px}
  .ears{display:flex;justify-content:space-between;font-size:.64rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--faint);padding-bottom:9px}
+ .seal{display:block;margin:2px auto 6px;width:62px;height:62px;opacity:.92}
+ @media(max-width:640px){ .seal{width:50px;height:50px} }
  h1{margin:0;font-size:clamp(2.3rem,8vw,4.4rem);font-weight:400;letter-spacing:.02em;
   color:var(--ink);line-height:.98;font-family:"Playbill","Bodoni 72",Didot,"Iowan Old Style",Georgia,serif;
   text-transform:uppercase}
@@ -92,6 +94,7 @@
 
  .colophon{border-top:2.5px solid var(--rule);margin-top:14px;padding-top:14px;
   text-align:center;font-size:.72rem;color:var(--faint);letter-spacing:.03em;line-height:1.7}
+ .colophon .colmark{display:block;margin:0 auto 9px;width:26px;height:26px;opacity:.5}
  .colophon a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--hair)}
  /* quiet door: reads as a printer's ornament until you hover it */
  .colophon a.mark{
@@ -110,6 +113,7 @@
   <span>Berkeley, California</span>
   <span>MMXXVI</span>
  </div>
+ <img class="seal" src="assets/ac-mark-ink.svg" alt="" width="64" height="64">
  <h1>Aodhan Coyne</h1>
  <div class="motto">Early California History &middot; Archives, Registers, Maps</div>
 </div>
@@ -194,6 +198,7 @@
 </div>
 
 <div class="colophon">
+ <img class="colmark" src="assets/ac-mark-ink.svg" alt="" width="26" height="26">
  <a href="https://orcid.org/0009-0002-8630-3768">ORCID 0009-0002-8630-3768</a> &nbsp;·&nbsp;
  <a href="https://github.com/Aodhanm">GitHub</a> &nbsp;·&nbsp;
  <a href="mailto:aodhancoyne@gmail.com">aodhancoyne@gmail.com</a><br>
