@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://aodhancoyne.com/">
+<title>Aodhan Coyne</title>
+<meta name="description" content="Aodhan Coyne. Early California history: the Archives of California, the ranchos register, the ship registry, and interactive historical maps. Open, citable datasets.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Aodhan Coyne">
+<meta property="og:description" content="Early California history: the Archives of California, the ranchos register, the ship registry, and interactive historical maps. Open, citable datasets.">
+<meta property="og:url" content="https://aodhancoyne.com/">
+<meta property="og:image" content="https://aodhancoyne.com/assets/ms-croix.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FDFBF3'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%2314120E' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aodhan Coyne",
+  "url": "https://aodhancoyne.com/",
+  "identifier": "https://orcid.org/0009-0002-8630-3768",
+  "knowsAbout": ["Early California history", "Spanish and Mexican California", "Archival science", "Digital humanities"],
+  "sameAs": [
+    "https://orcid.org/0009-0002-8630-3768",
+    "https://github.com/Aodhanm",
+    "https://archivesofcalifornia.com/"
+  ]
+}
+</script>
+<style>
+ :root{
+  --paper:#FDFBF3; --ink:#14120E; --soft:#33302A; --faint:#7E7768;
+  --rule:#14120E; --hair:#CFC7B2; --accent:#8C2F1D;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+ }
+ *{box-sizing:border-box}
+ body{margin:0;background:#EDE7D6;color:var(--soft);
+  font-family:var(--serif);font-size:16px;line-height:1.52;font-variant-numeric:oldstyle-nums}
+ .sheet{max-width:1120px;margin:0 auto;background:var(--paper);
+  padding:34px 40px 70px;border-left:1px solid var(--hair);border-right:1px solid var(--hair);
+  box-shadow:0 0 40px rgba(60,50,30,.08)}
+
+ /* masthead */
+ .flag{text-align:center;border-bottom:4px double var(--rule);padding-bottom:14px}
+ .ears{display:flex;justify-content:space-between;font-size:.64rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--faint);padding-bottom:9px}
+ h1{margin:0;font-size:clamp(2.3rem,8vw,4.4rem);font-weight:400;letter-spacing:.02em;
+  color:var(--ink);line-height:.98;font-family:"Playbill","Bodoni 72",Didot,"Iowan Old Style",Georgia,serif;
+  text-transform:uppercase}
+ .motto{margin:10px 0 0;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+
+ /* lede band */
+ .lede{border-bottom:1px solid var(--rule);padding:16px 0 18px;text-align:center}
+ .lede p{margin:0 auto;max-width:62ch;font-size:1.04rem;line-height:1.55}
+ .lede a{color:var(--accent);text-underline-offset:2px}
+
+ /* columns */
+ .cols{column-count:1;column-gap:34px;column-rule:1px solid var(--hair);padding-top:22px}
+ @media(min-width:720px){.cols{column-count:2}}
+ @media(min-width:1000px){.cols{column-count:3}}
+
+ .sec{break-inside:avoid;margin:0 0 4px}
+ .sechead{font-size:.63rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);
+  border-top:2.5px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:6px 0;margin:0 0 14px;text-align:center;font-weight:600}
+
+ .art{break-inside:avoid;padding:0 0 16px;margin-bottom:16px;border-bottom:1px solid var(--hair)}
+ .art .kick{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+ .art h3{margin:0 0 3px;font-size:1.16rem;font-weight:600;color:var(--ink);line-height:1.18;letter-spacing:-.008em}
+ .art h3 a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}
+ .art h3 a:hover,.art h3 a:focus-visible{color:var(--accent);border-bottom-color:var(--accent);outline:0}
+ .art .deck{font-size:.83rem;font-style:italic;color:var(--faint);margin:0 0 7px;
+  padding-bottom:6px;border-bottom:1px solid var(--hair)}
+ .art p{margin:0;font-size:.89rem;line-height:1.48;text-align:justify;hyphens:auto}
+ .art p::first-letter{font-size:1.05em;font-weight:600;color:var(--ink)}
+ .art .fig{display:block;margin-top:7px;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--faint);font-variant-numeric:lining-nums}
+
+ .cut{width:100%;display:block;border:1px solid var(--hair);margin:0 0 7px;
+  filter:saturate(.8) contrast(1.04)}
+ .cut.mono{filter:grayscale(1) contrast(1.12)}
+ .cut.tall{aspect-ratio:4/5;object-fit:cover;object-position:center top}
+ .cut.wide{aspect-ratio:16/10;object-fit:cover}
+ .cut.pad{background:#F6F2E7;padding:10px;object-fit:contain;aspect-ratio:16/10}
+ .cut.lockup{background:#191510;padding:16px 14px;object-fit:contain;aspect-ratio:16/7;filter:none}
+ .cutcap{font-size:.65rem;font-style:italic;color:var(--faint);margin:-2px 0 11px;
+  text-align:center;line-height:1.4}
+
+ .pub{break-inside:avoid;padding:0 0 11px;margin-bottom:11px;border-bottom:1px solid var(--hair);font-size:.83rem;line-height:1.45}
+ .pub .rn{color:var(--accent);font-size:.7rem;letter-spacing:.14em}
+ .pub cite{font-style:italic;color:var(--ink)}
+ .pub a{color:var(--accent);font-size:.72rem;text-decoration:none;border-bottom:1px solid var(--hair);font-variant-numeric:lining-nums;display:inline-block;margin-top:2px}
+
+ .colophon{border-top:2.5px solid var(--rule);margin-top:14px;padding-top:14px;
+  text-align:center;font-size:.72rem;color:var(--faint);letter-spacing:.03em;line-height:1.7}
+ .colophon a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--hair)}
+ /* quiet door: reads as a printer's ornament until you hover it */
+ .colophon a.mark{
+  display:block;margin:18px auto 0;width:26px;border:0;
+  color:#DDD5C0;font-size:1rem;line-height:1;text-align:center;
+  transition:color .35s ease;
+ }
+ .colophon a.mark:hover,.colophon a.mark:focus-visible{color:var(--accent);outline:0}
+</style></head>
+<body>
+<div class="sheet">
+
+<div class="flag">
+ <div class="ears">
+  <span>Vol. I &middot; No. 1</span>
+  <span>Berkeley, California</span>
+  <span>MMXXVI</span>
+ </div>
+ <h1>Aodhan Coyne</h1>
+ <div class="motto">Early California History &middot; Archives, Registers, Maps</div>
+</div>
+
+<div class="lede">
+ <p>I rebuild the archival record of early California as open, citable data. The core of
+ the work is the <a href="https://archivesofcalifornia.com/">Archives of California</a>, the
+ Savage transcripts at the Bancroft Library, the only surviving copy of the province's
+ government archive after 1906.</p>
+</div>
+
+<div class="cols">
+
+ <div class="sec"><div class="sechead">The Projects</div></div>
+
+ <div class="art">
+  <img class="cut mono tall" src="assets/ms-croix.jpg" alt="Savage transcript leaf, 1778">
+  <div class="cutcap">Bando of Teodoro de Croix, 22 March 1778. C&ndash;A 1.</div>
+  <div class="kick">No. I</div>
+  <h3><a href="https://archivesofcalifornia.com/">Archives of California</a></h3>
+  <p class="deck">A documentary calendar of the Savage transcripts</p>
+  <p>Volume by volume, each entry keyed to its manuscript leaf, with both page systems recorded and every document linked to the scan it was read from.</p>
+  <span class="fig">34,899 documents &middot; 63 volumes</span>
+ </div>
+
+ <div class="art">
+  <img class="cut wide" src="assets/ranchos-map.jpg" alt="The land grants mapped and coloured by governor">
+  <div class="cutcap">The register mapped: 535 grants, coloured by the governor who made each.</div>
+  <div class="kick">No. II</div>
+  <h3><a href="https://ranchos.archivesofcalifornia.com/">Ranchos de Alta California</a></h3>
+  <p class="deck">A register of the land grants</p>
+  <p>Every grant and claim, mapped where a surveyed boundary survives, with the diseños, the grantee dynasties and the registered cattle brands.</p>
+  <span class="fig">672 grants &middot; 535 mapped</span>
+ </div>
+
+ <div class="art">
+  <img class="cut mono pad" src="assets/brands.jpg" alt="Registered California cattle brands">
+  <div class="cutcap">Registered brands, 1822&ndash;1859.</div>
+  <div class="kick">Specimen</div>
+  <h3><a href="https://ranchos.archivesofcalifornia.com/brands/">The Brands</a></h3>
+  <p class="deck">Marks of ownership, recorded in the county books</p>
+  <p>Each rancho registered its hierro. The marks survive in the brand books where the boundaries did not.</p>
+ </div>
+
+ <div class="art">
+  <img class="cut wide" src="assets/maps-moraga.jpg" alt="Gabriel Moraga's expeditions, 1806 to 1817">
+  <div class="cutcap">Moraga's expeditions, 1806&ndash;1817, reconstructed stop by stop.</div>
+  <div class="kick">No. III</div>
+  <h3><a href="https://maps.archivesofcalifornia.com/">California History Maps</a></h3>
+  <p class="deck">Interactive cartography of the archival record</p>
+  <p>Expeditions, engagements and imperial contests reconstructed point by point. Every pin carries its source; uncertain locations are drawn so you can see the uncertainty.</p>
+  <span class="fig">12 maps &middot; 1,339 features</span>
+ </div>
+
+ <div class="art">
+  <img class="cut wide" src="assets/ships-traffic.jpg" alt="Vessel traffic to the Californias by flag, 1769 to 1846">
+  <div class="cutcap">Traffic by flag, 1769&ndash;1846, from the registry itself.</div>
+  <div class="kick">No. IV</div>
+  <h3><a href="https://ships.archivesofcalifornia.com/">California Ship Registry</a></h3>
+  <p class="deck">Documented vessel visits to the Californias</p>
+  <p>Each visit cited to the archival or published source it rests on, with flags, anchorages and outcomes. Currently a draft release.</p>
+  <span class="fig">2,072 visits &middot; 400 vessels</span>
+ </div>
+
+ <div class="art">
+  <img class="cut lockup" src="assets/alcalde-brand.jpg" alt="Alcalde Books">
+  <div class="kick">No. V</div>
+  <h3><a href="https://alcaldebooks.com/">Alcalde Books</a></h3>
+  <p class="deck">Californian &amp; Western Americana</p>
+  <p>A curated shop of history and rare books, selected and described by a trained historian.</p>
+ </div>
+
+ <div class="sec"><div class="sechead">Published Datasets</div></div>
+
+ <div class="pub"><span class="rn">I.</span> Coyne, Aodhan. <cite>Archives of California: A Documentary Calendar of the Savage Transcripts (BANC MSS C-A)</cite>. Version 1.1.0. Zenodo, 13 August 2026.<br><a href="https://doi.org/10.5281/zenodo.21327098">doi.org/10.5281/zenodo.21327098</a></div>
+ <div class="pub"><span class="rn">II.</span> Coyne, Aodhan. <cite>Ranchos of California: A Register of the Land Grants of Alta California</cite>. Version 1.0.0. Zenodo, 31 August 2026.<br><a href="https://doi.org/10.5281/zenodo.22185500">doi.org/10.5281/zenodo.22185500</a></div>
+ <div class="pub"><span class="rn">III.</span> Coyne, Aodhan. <cite>California Ship Registry, 1769&ndash;1846: A Documentary Register of Vessel Visits to the Californias</cite>. Zenodo, 26 August 2026.<br><a href="https://doi.org/10.5281/zenodo.22105908">doi.org/10.5281/zenodo.22105908</a></div>
+
+ <div class="sec"><div class="sechead">Writing</div></div>
+ <div class="art"><p><i>In preparation.</i></p></div>
+
+</div>
+
+<div class="colophon">
+ <a href="https://orcid.org/0009-0002-8630-3768">ORCID 0009-0002-8630-3768</a> &nbsp;·&nbsp;
+ <a href="https://github.com/Aodhanm">GitHub</a> &nbsp;·&nbsp;
+ <a href="mailto:aodhancoyne@gmail.com">aodhancoyne@gmail.com</a><br>
+ Datasets CC BY 4.0, code MIT. Corrections welcome and logged in each project's errata.
+ <a class="mark" href="https://games.aodhancoyne.com/" aria-label="Games">&#10087;</a>
+</div>
+
+</div>
+
+<script>
+ /* type "kedr" anywhere on the page */
+ (function(){
+  var want='kedr', buf='';
+  addEventListener('keydown', function(e){
+   if(e.metaKey||e.ctrlKey||e.altKey) return;
+   if(/^[a-z]$/i.test(e.key)){
+    buf=(buf+e.key.toLowerCase()).slice(-want.length);
+    if(buf===want) location.href='https://games.aodhancoyne.com/';
+   } else { buf=''; }
+  });
+ })();
+</script>
+</body></html>
