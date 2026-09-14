@@ -106,6 +106,16 @@
   transition:color .35s ease;
  }
  .colophon a.mark:hover,.colophon a.mark:focus-visible{color:var(--accent);outline:0}
+
+ /* a standing cut at the foot of a short column: no headline, just the plate
+    and its citation */
+ .specimen{padding-bottom:14px}
+ .specimen .sechead{margin-bottom:8px}
+ .specimen .cutlink{display:block;border:0}
+ .specimen .cutlink:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+ .specimen .cut{margin-bottom:6px;transition:filter .2s ease}
+ .specimen .cutlink:hover .cut{filter:contrast(1.06) saturate(1.05)}
+ .specimen .cutcap{margin-bottom:0}
 </style></head>
 <body>
 <div class="sheet">
@@ -169,6 +179,14 @@
   <p class="deck">Interactive cartography of the archival record</p>
   <p>Expeditions, engagements and imperial contests reconstructed point by point. Every pin carries its source; uncertain locations are drawn so you can see the uncertainty.</p>
   <span class="fig">12 maps &middot; 1,339 features</span>
+ </div>
+
+ <div class="art specimen">
+  <div class="sechead">From the Archive</div>
+  <a class="cutlink" href="https://digicoll.lib.berkeley.edu/record/78831" rel="noopener">
+   <img class="cut wide" src="assets/diseno-alamos.jpg" alt="Detail of a manuscript sketch map: the words Dise&#241;o de los Alamos in a nineteenth-century hand, a rubric, and a line of small drawn trees beside a shaded ridge">
+  </a>
+  <div class="cutcap">Dise&#241;o de los Alamos, Santa Barbara County. Land Case Maps, The Bancroft Library, University of California, Berkeley.</div>
  </div>
 
  <div class="art">
