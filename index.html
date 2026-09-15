@@ -85,7 +85,11 @@
   box-shadow:0 0 40px rgba(60,50,30,.08)}
 
  /* masthead */
- .flag{text-align:center;border-bottom:4px double var(--rule);padding-bottom:14px}
+ .flag{text-align:center;padding-bottom:0}
+ /* the top line, with the star centred on it, as on Alcalde Books */
+ .divider{display:flex;align-items:center;gap:16px;padding:14px 0 0}
+ .divider .ln{flex:1;height:3px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+ .divider .star{width:22px;height:22px;flex:none;color:var(--accent)}
  .ears{display:flex;justify-content:space-between;font-size:.64rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--faint);padding-bottom:9px}
  .seal{display:block;margin:2px auto 6px;width:62px;height:62px;opacity:.92}
@@ -158,7 +162,145 @@
  .specimen .cut{margin-bottom:6px;transition:filter .2s ease}
  .specimen .cutlink:hover .cut{filter:contrast(1.06) saturate(1.05)}
  .specimen .cutcap{margin-bottom:0}
-</style></head>
+</style><style id=DEMO-OVERRIDE>
+/* ===== NIGHT EDITION ==================================================== */
+:root{
+  --paper:#16130F; --ink:#F1E7D2; --soft:#CFC3AC;
+  --faint:#8C8471; --hair:#302A22; --rule:#4A4133; --accent:#B08D57;
+}
+body{background:#0C0A08}
+.sheet{
+  background:radial-gradient(ellipse at 50% -10%, #221D16 0%, #16130F 60%);
+  border-left:1px solid #2A241C; border-right:1px solid #2A241C;
+  box-shadow:0 0 90px rgba(0,0,0,.8); color:var(--soft);
+}
+.flag{border-bottom:4px double var(--accent)}
+h1{color:#F1E7D2}
+.ears,.motto{color:#8C8471}
+.lede{border-bottom:1px solid #3A3227}
+.lede p{color:#CFC3AC}
+.lede a{color:var(--accent)}
+.cols{column-rule:1px solid #2A241C}
+.sechead{color:var(--accent);border-top:2.5px solid var(--accent);border-bottom:1px solid #3A3227}
+.art{border-bottom:1px solid #262019}
+.art h3{color:#F1E7D2}
+.art h3 a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.art .kick{color:var(--accent)}
+.art .deck{color:#8C8471;border-bottom:1px solid #262019}
+.art p{color:#CFC3AC}
+.art p::first-letter{color:#F1E7D2}
+.cut{border:1px solid #3A3227;filter:saturate(.85) contrast(1.06) brightness(.94);
+     box-shadow:0 6px 18px rgba(0,0,0,.55)}
+.cut.pad{background:#1E1913}
+.cut.mono{filter:grayscale(1) contrast(1.15) brightness(.92)}
+.cutcap,.fig{color:#8C8471}
+.pub{border-bottom:1px solid #262019;color:#CFC3AC}
+.pub cite{color:#F1E7D2}
+.pub a{color:var(--accent);border-bottom-color:#3A3227}
+.colophon{border-top:2.5px solid var(--accent);color:#8C8471}
+.colophon a{color:var(--accent);border-bottom-color:#3A3227}
+
+/* ----- the top line, with the star centred on it ------------------------ */
+.flag{border-bottom:0;padding-bottom:0}
+.divider{display:flex;align-items:center;gap:16px;padding:14px 0 0}
+.divider .ln{flex:1;height:3px;border-top:1px solid var(--accent);border-bottom:1px solid var(--accent);opacity:.85}
+.divider .star{width:22px;height:22px;flex:none;color:#C0392B}
+
+/* ----- the brand, larger ----------------------------------------------- */
+.seal{width:104px;height:104px;opacity:1;margin:4px auto 10px}
+@media(max-width:640px){ .seal{width:76px;height:76px} }
+
+/* ----- one gold rule per project, so the divisions read ------------------
+   Only the numbered entries get it. The specimen cuts (the brands sheet, the
+   diseño) stay quiet so the rules mean "a new project" and nothing else. */
+.art:has(.kick){
+  border-top:2px solid var(--accent);
+  border-bottom:0;
+  padding-top:13px;
+  margin-top:10px;
+}
+.art:has(.kick) .kick{
+  color:var(--accent);font-weight:700;letter-spacing:.26em;font-size:.62rem;
+  margin-bottom:6px;
+}
+.art:not(:has(.kick)){border-bottom:1px solid #2A241C}
+/* the section heads keep a heavier gold rule so they outrank the project rules */
+.sechead{border-top:3px solid var(--accent);border-bottom:1px solid #3A3227;
+  color:var(--accent);font-weight:700}
+
+/* ----- the foot ---------------------------------------------------------
+   The sheet used to stop wherever the columns ended, leaving the dark body
+   showing below it as a void. It now runs to the bottom of the window. */
+.sheet{min-height:100vh;display:flex;flex-direction:column}
+.cols{flex:1 0 auto}
+.colophon{margin-top:auto;padding-top:18px;padding-bottom:10px}
+.colophon .colmark{width:30px;height:30px;opacity:.65}
+
+/* ----- the author note -------------------------------------------------- */
+.author .bio{border-top:0;border-bottom:0;padding-top:4px}
+.author .bio .who{font-size:1.05rem;color:#F1E7D2;margin:0 0 6px;letter-spacing:.01em}
+.author .bio p{font-size:.84rem;line-height:1.5;color:#CFC3AC;margin:0 0 8px;text-align:justify;hyphens:auto}
+.author .bio p::first-letter{font-size:inherit;font-weight:inherit;color:inherit}
+.author .bio .orcidline{font-size:.7rem;letter-spacing:.06em;color:#8C8471;
+  font-variant-numeric:lining-nums;margin-top:10px}
+.author .bio .orcidline a{color:var(--accent);text-decoration:none;border-bottom:1px solid #3A3227}
+
+/* ===== FROM THE ARCHIVE ================================================= */
+.arch{break-inside:avoid;margin:0 0 18px}
+.arch .plate{
+  display:block;width:100%;border:1px solid #3A3227;background:#0E0C09;
+  cursor:zoom-in;padding:0;line-height:0;position:relative;
+  box-shadow:0 6px 20px rgba(0,0,0,.6);transition:border-color .2s ease;
+}
+.arch .plate:hover{border-color:var(--accent)}
+.arch .plate:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.arch .plate img{width:100%;display:block;filter:grayscale(1) contrast(1.1) brightness(.95)}
+.arch .plate:hover img{filter:grayscale(.85) contrast(1.14) brightness(1)}
+.arch .zoom{
+  position:absolute;right:7px;bottom:7px;font-size:.56rem;letter-spacing:.16em;
+  text-transform:uppercase;color:#E8DCC2;background:rgba(12,10,8,.72);
+  padding:3px 7px;border:1px solid rgba(176,141,87,.5);line-height:1.4;
+}
+.arch .id{margin-top:9px;font-size:.78rem;line-height:1.46;color:#CFC3AC}
+.arch .id .when{color:var(--accent);font-variant-numeric:lining-nums;
+  letter-spacing:.06em;font-size:.72rem;text-transform:uppercase}
+.arch .id .who{color:#F1E7D2;font-style:italic;display:block;margin:2px 0 4px}
+.arch .id .cite{display:block;margin-top:6px;font-size:.68rem;color:#8C8471;
+  letter-spacing:.04em;font-variant-numeric:lining-nums}
+.arch .id a{color:var(--accent);text-decoration:none;border-bottom:1px solid #3A3227}
+.arch .rot{margin-top:7px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#6E6757}
+
+/* the viewer */
+.viewer[hidden]{display:none}
+.viewer{
+  position:fixed;inset:0;z-index:99;background:rgba(6,5,4,.94);
+  display:flex;flex-direction:column;padding:22px;
+}
+.viewer .vtop{display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;color:#8C8471;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  padding-bottom:10px;border-bottom:1px solid #3A3227}
+.viewer .vclose{background:0;border:1px solid #3A3227;color:#E8DCC2;cursor:pointer;
+  font:inherit;letter-spacing:.16em;padding:4px 12px}
+.viewer .vclose:hover{border-color:var(--accent);color:var(--accent)}
+.viewer .vbody{flex:1;display:flex;gap:24px;min-height:0;padding-top:16px}
+@media(max-width:820px){ .viewer .vbody{flex-direction:column;overflow:auto} }
+.viewer .vimg{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;
+  background:#0E0C09;border:1px solid #2A241C}
+.viewer .vimg img{max-width:100%;max-height:100%;object-fit:contain;
+  filter:grayscale(1) contrast(1.08)}
+.viewer .vmeta{flex:0 0 310px;color:#CFC3AC;font-size:.84rem;line-height:1.55;overflow:auto}
+@media(max-width:820px){ .viewer .vmeta{flex:auto} }
+.viewer .vmeta h4{margin:0 0 4px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);font-weight:600}
+.viewer .vmeta .when{color:var(--accent);font-variant-numeric:lining-nums}
+.viewer .vmeta .who{color:#F1E7D2;font-style:italic}
+.viewer .vmeta .cite{color:#8C8471;font-size:.75rem;letter-spacing:.04em}
+.viewer .vmeta a{color:var(--accent);text-decoration:none;border-bottom:1px solid #3A3227}
+.viewer .vmeta p{margin:.5em 0}
+.viewer p::first-letter{font-size:inherit;font-weight:inherit;float:none;color:inherit}
+.viewer .loading{color:#6E6757;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+</style>
+</head>
 <body>
 <div class="sheet">
 
@@ -168,9 +310,14 @@
   <span>Berkeley, California</span>
   <span>MMXXVI</span>
  </div>
- <img class="seal" src="assets/ac-mark-ink.svg" alt="" width="64" height="64">
+ <img class="seal" src="assets/ac-mark-gold.svg?v=2" alt="" width="64" height="64">
  <h1>Aodhan Coyne</h1>
  <div class="motto">Early California History &middot; Archives, Registers, Maps</div>
+<div class="divider" aria-hidden="true">
+<span class="ln"></span>
+<svg class="star" viewBox="0 0 40 40"><path fill="currentColor" d="M20,4 L23.4,14.8 L34.7,14.8 L25.6,21.5 L29,32.3 L20,25.6 L11,32.3 L14.4,21.5 L5.3,14.8 L16.6,14.8 Z"/></svg>
+<span class="ln"></span>
+</div>
 </div>
 
 <div class="lede">
@@ -225,11 +372,22 @@
 
  <div class="art specimen">
   <div class="sechead">From the Archive</div>
-  <a class="cutlink" href="https://digicoll.lib.berkeley.edu/record/78831" rel="noopener">
-   <img class="cut wide" src="assets/diseno-alamos.jpg" alt="Detail of a manuscript sketch map: the words Dise&#241;o de los Alamos in a nineteenth-century hand, a rubric, and a line of small drawn trees beside a shaded ridge">
-  </a>
-  <div class="cutcap">Dise&#241;o de los Alamos, Santa Barbara County. Land Case Maps, The Bancroft Library, University of California, Berkeley.</div>
- </div>
+<div class="arch" id="fromarchive">
+  <button class="plate" id="archPlate" aria-label="Open this sheet in the viewer">
+    <img id="archImg" src="" alt="">
+    <span class="zoom">View the sheet</span>
+  </button>
+  <div class="id">
+    <span class="when" id="archWhen"></span>
+    <span class="who" id="archWho"></span>
+    <span id="archWhat"></span>
+    <span class="cite" id="archCite"></span>
+    <span class="cite"><a id="archLink" href="#">Open the catalog record &#8594;</a></span>
+  </div>
+  <div class="rot" id="archRot"></div>
+</div>
+
+</div>
 
  <div class="art">
   <img class="cut wide" src="assets/ships-traffic.jpg" alt="Vessel traffic to the Californias by flag, 1769 to 1846">
@@ -258,10 +416,19 @@
  <div class="sec"><div class="sechead">Writing</div></div>
  <div class="art"><p><i>In preparation.</i></p></div>
 
+
+<div class="sec author">
+  <div class="sechead">The Author</div>
+  <div class="art bio">
+    <p class="who">Aodhan Coyne</p>
+    <p>I work on the history of early California, from 1769 to the American conquest, and on making the archives of that period usable. My principal project is Archives of California, a document-level calendar of the Savage transcripts at the Bancroft Library, the copies that remain after the originals were destroyed in 1906. I am extending it beyond Savage to the other nineteenth-century compilers who worked from the same records, among them Hittell and Eldredge, and cross-referencing it with the pueblo archives of San José and Los Angeles, with further collections to follow. The aim is a cross-archive index of early California, one that lets a person or a document be followed across collections. Alongside it I maintain a register of the Spanish and Mexican land grants, a registry of ship arrivals to the Californias, and a series of historical maps. All of it is published openly and added to continually. B.A. in History, University of California, Berkeley (2025).</p>
+    <p class="orcidline">ORCID <a href="https://orcid.org/0009-0002-8630-3768">0009-0002-8630-3768</a></p>
+  </div>
+</div>
 </div>
 
 <div class="colophon">
- <img class="colmark" src="assets/ac-mark-ink.svg" alt="" width="26" height="26">
+ <img class="colmark" src="assets/ac-mark-gold.svg?v=2" alt="" width="26" height="26">
  <a href="https://orcid.org/0009-0002-8630-3768">ORCID 0009-0002-8630-3768</a> &nbsp;·&nbsp;
  <a href="https://github.com/Aodhanm">GitHub</a> &nbsp;·&nbsp;
  <a href="mailto:aodhancoyne@gmail.com">aodhancoyne@gmail.com</a><br>
@@ -284,4 +451,74 @@
   });
  })();
 </script>
+
+<div class="viewer" id="archViewer" hidden>
+  <div class="vtop">
+    <span>From the Archive &#183; a dise&#241;o &#183; <span id="vWhen"></span></span>
+    <button class="vclose" id="vClose">Close &#215;</button>
+  </div>
+  <div class="vbody">
+    <div class="vimg"><span class="loading" id="vLoading">Fetching the sheet&#8230;</span><img id="vImg" alt="" hidden></div>
+    <div class="vmeta">
+      <h4>What this sheet is</h4>
+      <p class="who" id="vWho"></p>
+      <p id="vWhat"></p>
+      <p class="cite" id="vCite"></p>
+      <p><a id="vLink" href="#">Open the Bancroft record &#8594;</a></p>
+      <p><a id="vIA" href="#" target="_blank" rel="noopener">See the full sheet at the Bancroft &#8594;</a></p>
+      <p class="cite">A <i>dise&#241;o</i> is the hand-drawn sketch map a grantee filed as
+      evidence of his claim. These were submitted to the United States land commission
+      after 1851 and survive in the Bancroft land-case files.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var DOCS = [{"img": "assets/disenos/dise-o-del-rancho-san-antonio-alameda-county-calif--rec79458-1.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-san-antonio-alameda-county-calif--rec79458-1.jpg", "title": "Diseño del Rancho San Antonio", "county": "Alameda County", "what": "Rancho San Antonio was granted in 1820, in the late Spanish period, to Luis Maria Peralta, and covered roughly 44,800 acres across present Oakland, Berkeley, Alameda, and San Leandro. It was later divided among Peralta's four sons.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79458"}, {"img": "assets/disenos/dise-o-del-rancho-arroyo-chico-calif-john-bidwell--rec78472.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-arroyo-chico-calif-john-bidwell--rec78472.jpg", "title": "Diseño del Rancho Arroyo Chico", "county": "Butte County", "what": "This diseño of Rancho Arroyo Chico in the upper Sacramento Valley was drawn by the pioneer John Bidwell, who owned the rancho and founded the town of Chico. Bidwell had arrived with the 1841 Bartleson-Bidwell party and became a leading figure in early American California.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78472"}, {"img": "assets/disenos/dice-o-del-rancho-de-sta-anna-o-del-chino-calif--rec79285.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dice-o-del-rancho-de-sta-anna-o-del-chino-calif--rec79285.jpg", "title": "Diceño del Rancho de Sta. Anna o del Chino", "county": "County not stated", "what": "Rancho Santa Ana del Chino was granted in 1841 to Antonio Maria Lugo and enlarged under his son-in-law, the American settler Isaac Williams. The rancho was the scene of the Battle of Chino in September 1846 during the Mexican-American War.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79285"}, {"img": "assets/disenos/estado-que-comprende-las-suertes-de-tierras-correspondientes--rec79398.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/estado-que-comprende-las-suertes-de-tierras-correspondientes--rec79398.jpg", "title": "Estado que comprende las suertes de tierras correspondientes del pueblo de la Reina de Los Angeles [Calif", "county": "County not stated", "what": "This early plan sets out the suertes (planting fields) and lots of the pueblo of Los Angeles, referencing the measurement authority of Governor Felipe de Neve, who founded the pueblo in 1781. It is a foundational-era document of the town's land allotment.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79398"}, {"img": "assets/disenos/dise-o-del-rancho-providencia-calif--rec78805.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-providencia-calif--rec78805.jpg", "title": "Diseño del Rancho Providencia", "county": "Los Angeles County", "what": "Rancho La Providencia occupied land along the Los Angeles River in the present Burbank area, adjoining the Verdugo family's Rancho San Rafael. It is generally associated with a grant to Vicente de la Osa in the early 1840s.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78805"}, {"img": "assets/disenos/dise-o-del-rancho-la-puente-calif--rec79721-1.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-la-puente-calif--rec79721-1.jpg", "title": "Diseño del Rancho La Puente", "county": "Los Angeles County", "what": "Rancho La Puente in the San Gabriel Valley was granted in the early 1840s to John Rowland and William Workman, Anglo-American settlers who had reached California via the 1841 Rowland-Workman overland party from New Mexico. The grant totaled roughly 48,000 acres.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79721"}, {"img": "assets/disenos/dise-o-del-rancho-nicasio-marin-co-calif--rec78769.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-nicasio-marin-co-calif--rec78769.jpg", "title": "Diseño del Rancho Nicasio", "county": "Marin County", "what": "Rancho Nicasio was one of the largest land grants in Marin County, laid out on lands formerly attached to Mission San Rafael Arcangel following secularization. Its diseño depicts the interior hill country west of San Rafael.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78769"}, {"img": "assets/disenos/dise-o-del-rancho-punta-de-los-reyes-marin-co-calif--rec79132.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-punta-de-los-reyes-marin-co-calif--rec79132.jpg", "title": "Diseño del Rancho Punta de los Reyes", "county": "Marin County", "what": "This diseño maps the Point Reyes peninsula on the outer Marin coast, granted during the Mexican period. The Point Reyes ranchos later became the subject of extended United States land litigation before passing into large-scale dairy operations.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79132"}, {"img": "assets/disenos/dise-o-del-rancho-olompali-marin-county-calif--rec79180.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-olompali-marin-county-calif--rec79180.jpg", "title": "Diseño del Rancho Olompali", "county": "Marin County", "what": "Rancho Olompali in Marin County was granted in 1843 to Camilo Ynitia, a Coast Miwok headman, making it one of the very few Mexican grants confirmed to a Native Californian. The site was also the location of the only armed skirmish of the Bear Flag Revolt in June 1846.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79180"}, {"img": "assets/disenos/el-que-subscribe-certifico-que-este-es-el-plano-del-terreno---rec78415.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/el-que-subscribe-certifico-que-este-es-el-plano-del-terreno---rec78415.jpg", "title": "El que subscribe certifico que este es el plano del terreno llamado las Mariposas que me fue concedido por el gobierno…", "county": "Mariposa County", "what": "This diseño of the floating grant Las Mariposas is certified by former governor Juan Bautista Alvarado, to whom the grant was made in 1844. Alvarado sold it to John C. Fremont in 1847, and it became extraordinarily valuable in the Gold Rush and the subject of the 1855 Supreme Court case Fremont v. United States.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78415"}, {"img": "assets/disenos/dise-o-del-rancho-santiago-de-santa-ana-calif--rec79271.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-santiago-de-santa-ana-calif--rec79271.jpg", "title": "Diseño del Rancho Santiago de Santa Ana", "county": "Orange County", "what": "Rancho Santiago de Santa Ana was granted in 1810, in the Spanish period, to Jose Antonio Yorba and his nephew Juan Pablo Peralta. It was one of the earliest and largest grants in the territory that became Orange County.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79271"}, {"img": "assets/disenos/dise-o-del-rancho-nueva-helvetia-calif--rec78688.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-nueva-helvetia-calif--rec78688.jpg", "title": "Diseño del Rancho Nueva Helvetia", "county": "Sacramento County", "what": "Rancho Nueva Helvetia was the roughly 48,000-acre grant made to John A. Sutter in 1841 at the junction of the American and Sacramento rivers, the site of Sutter's Fort. Gold was discovered at nearby Coloma on associated Sutter property in January 1848.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78688"}, {"img": "assets/disenos/dise-o-del-rancho-san-bernardino-calif--rec78502.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-san-bernardino-calif--rec78502.jpg", "title": "Diseño del Rancho San Bernardino", "county": "San Bernardino County", "what": "Rancho San Bernardino was granted in 1842 to members of the Lugo family. The land was sold in 1851 to Mormon colonists, who founded the city of San Bernardino.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78502"}, {"img": "assets/disenos/plan-de-cucamonga-calif--rec79344.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/plan-de-cucamonga-calif--rec79344.jpg", "title": "Plan de Cucamonga", "county": "San Bernardino County", "what": "Rancho Cucamonga was granted in 1839 to Tiburcio Tapia, a Los Angeles merchant and former alcalde. The rancho, in present San Bernardino County, later became noted for its vineyards.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79344"}, {"img": "assets/disenos/dise-o-del-rancho-suisun-solano-co-calif--rec78550.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-suisun-solano-co-calif--rec78550.jpg", "title": "Diseño del Rancho Suisun", "county": "Solano County", "what": "Rancho Suisun, in present Solano County, was granted about 1842 to Francisco Solano (Sem-Yeto), the Patwin/Suisun chief and ally of Mariano Vallejo who was baptized under that name. It is one of the few grants made to a Native Californian, and the land later passed into Vallejo family hands.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78550"}, {"img": "assets/disenos/map-of-suscol-a-rancho-claim-in-solano-county-calif--rec78684.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/map-of-suscol-a-rancho-claim-in-solano-county-calif--rec78684.jpg", "title": "Map of Suscol", "county": "Solano County", "what": "Rancho Soscol (Suscol) was a very large grant of roughly 80,000 acres made to Mariano Guadalupe Vallejo around 1843-44, spanning lands near present Vallejo, Benicia, and the Napa River. The claim was ultimately rejected by the United States Supreme Court in 1862, a landmark ruling on the validity of Mexican grants.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78684"}, {"img": "assets/disenos/dise-o-del-rancho-estero-americano-sonoma-co-calif--rec78565.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-estero-americano-sonoma-co-calif--rec78565.jpg", "title": "Diseño del Rancho Estero Americano", "county": "Sonoma County", "what": "Rancho Estero Americano lay along the estuary of the same name on the Sonoma-Marin coast, immediately inland from Bodega Bay. It is generally associated with the grant made in the late 1830s to Edward Manuel McIntosh, and the tract later passed to surveyor Jasper O'Farrell.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78565"}, {"img": "assets/disenos/dise-o-del-rancho-cabeza-de-santa-rosa-calif--rec78598.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-cabeza-de-santa-rosa-calif--rec78598.jpg", "title": "Diseño del Rancho Cabeza de Santa Rosa", "county": "Sonoma County", "what": "Rancho Cabeza de Santa Rosa was granted in 1841 to Maria Ignacia Lopez de Carrillo, the widowed mother-in-law of Mariano Guadalupe Vallejo. The rancho encompassed the site of present-day Santa Rosa.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78598"}, {"img": "assets/disenos/dise-o-del-rancho-el-molino-o-rio-ayoska-sonoma-co-calif--rec78651.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-el-molino-o-rio-ayoska-sonoma-co-calif--rec78651.jpg", "title": "Diseño del Rancho El Molino o Rio Ayoska", "county": "Sonoma County", "what": "Rancho El Molino, on the Russian River drainage in present Sonoma County, takes its name (the mill) from an early water-powered sawmill in the district. The rancho is associated with the pioneer ranchero and sea captain John B.R. Cooper.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78651"}, {"img": "assets/disenos/dise-o-del-rancho-camulos-ventura-county-calif--rec78925.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-camulos-ventura-county-calif--rec78925.jpg", "title": "Diseño del Rancho Camulos", "county": "Ventura County", "what": "Camulos lay in the Santa Clara River valley of present Ventura County within the orbit of Rancho San Francisco, held by the del Valle family. The del Valle home at Camulos later became widely identified as a setting associated with Helen Hunt Jackson's 1884 novel Ramona.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/78925"}, {"img": "assets/disenos/dise-o-del-rancho-simi-calif--rec79255.jpg", "full": "https://maps.archivesofcalifornia.com/gallery/disenos-img/dise-o-del-rancho-simi-calif--rec79255.jpg", "title": "Diseño del Rancho Simi", "county": "Ventura County", "what": "Rancho Simi, formally San Jose de Nuestra Señora de Altagracia y Simi, was among the earliest and largest California grants, long held by the Pico family, and lay in present Ventura County. Its bounds covered well over 100,000 acres.", "credit": "The Bancroft Library, University of California, Berkeley (Land Case Maps). Digitized via digicoll.lib.berkeley.edu. Public domain.", "link": "https://digicoll.lib.berkeley.edu/record/79255"}];
+  // one document a day: the same leaf for everyone on a given date, and a new one
+  // at midnight local. Deterministic, so no state and no server needed.
+  function todayIndex(){
+    var d = new Date();
+    var days = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5);
+    return days % DOCS.length;
+  }
+  var doc = DOCS[todayIndex()];
+  function el(id){ return document.getElementById(id); }
+
+  el('archImg').src = doc.img;
+  el('archImg').alt = 'Manuscript dise\u00f1o: ' + doc.title;
+  el('archWhen').textContent = doc.county;
+  el('archWho').textContent  = doc.title;
+  el('archWhat').textContent = doc.what;
+  el('archCite').textContent = doc.credit;
+  el('archLink').href = doc.link;
+  el('archLink').textContent = 'Open the Bancroft record \u2192';
+  el('archRot').textContent = 'A new sheet each day \u00b7 ' + DOCS.length + ' in rotation';
+
+  var v = el('archViewer');
+  function open(){
+    el('vWhen').textContent = doc.county;
+    el('vWho').textContent  = doc.title;
+    el('vWhat').textContent = doc.what;
+    el('vCite').textContent = doc.credit;
+    el('vLink').href = doc.link;
+    el('vIA').href   = doc.link;
+    var img = el('vImg'), load = el('vLoading');
+    img.hidden = true; load.hidden = false;
+    img.onload = function(){ img.hidden = false; load.hidden = true; };
+    img.onerror = function(){ img.src = doc.img; };   // fall back to the local copy
+    img.src = doc.full;
+    v.hidden = false;
+    document.body.style.overflow = 'hidden';
+    el('vClose').focus();
+  }
+  function close(){ v.hidden = true; document.body.style.overflow = ''; el('archPlate').focus(); }
+  el('archPlate').addEventListener('click', open);
+  el('vClose').addEventListener('click', close);
+  v.addEventListener('click', function(e){ if(e.target === v) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !v.hidden) close(); });
+})();
+</script>
+
 </body></html>
