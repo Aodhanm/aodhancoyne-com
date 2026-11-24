@@ -165,6 +165,15 @@
  .specimen .cut{margin-bottom:6px;transition:filter .2s ease}
  .specimen .cutlink:hover .cut{filter:contrast(1.06) saturate(1.05)}
  .specimen .cutcap{margin-bottom:0}
+.cols{flex:0 0 auto}
+.lower .sec{margin-top:0}
+.sheet{min-height:0}
+.cols .art{break-inside:auto}
+.cols .art img,.cols .art .cutcap,.cols .art .kick,.cols .art h3,.cols .art .deck{break-inside:avoid;break-after:avoid}
+.cols .art .fig{break-before:avoid}
+.cols{column-fill:balance}
+.cols .sec,.cols .specimen{break-inside:avoid}
+.cols{column-count:auto!important;columns:auto!important}
 </style><style id=DEMO-OVERRIDE>
 /* ===== NIGHT EDITION ==================================================== */
 :root{
@@ -303,6 +312,39 @@ h1{color:#F1E7D2}
 .viewer p::first-letter{font-size:inherit;font-weight:inherit;float:none;color:inherit}
 .viewer .loading{color:#6E6757;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
 </style>
+<style id="layout-v2">
+.thumb{display:block;border:0}
+.thumb:hover .cut{filter:brightness(1.06)}
+.thumb .cut.mono:hover{filter:grayscale(1) contrast(1.12) brightness(1.06)}
+
+.lower2{display:grid;grid-template-columns:1fr;column-gap:34px;row-gap:0}
+.lower2 .cell{position:relative;min-width:0}
+@media(min-width:1000px){
+ .lower2{grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto 1fr}
+ .lower2 .ca{grid-column:1;grid-row:1}
+ .lower2 .cb{grid-column:2;grid-row:1 / span 2}
+ .lower2 .cc{grid-column:3;grid-row:1}
+ .lower2 .cd{grid-column:1;grid-row:2}
+ .lower2 .ce{grid-column:3;grid-row:2}
+ .lower2 .cb::before,.lower2 .cc::before,.lower2 .ce::before{content:"";position:absolute;left:-17px;top:0;bottom:0;width:1px;background:#2A241C}
+}
+
+.lowcol{display:flex;flex-direction:column}
+.lowcol>.art:last-child{flex:1 0 auto}
+
+.cols{padding-bottom:0;flex:0 0 auto!important}
+.lower{flex:0 0 auto}
+.grid3,.lower{display:grid;grid-template-columns:1fr;column-gap:34px;row-gap:0;margin:0;padding:0}
+.stack,.lowcol{position:relative;min-width:0}
+@media(min-width:720px){.grid3,.lower{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){
+ .grid3,.lower{grid-template-columns:1fr 1fr 1fr}
+ .stack+.stack::before,.lowcol+.lowcol::before{content:"";position:absolute;left:-17px;top:0;bottom:0;width:1px;background:#2A241C}
+}
+.lower{padding-top:0;margin-top:0}
+.lower .lowcol>.sec:first-child{margin-top:0}
+</style>
+
 </head>
 <body>
 <div class="sheet">
@@ -326,64 +368,82 @@ h1{color:#F1E7D2}
 <div class="lede">
  <p>I rebuild the archival record of early California as open, citable data. The core of
  the work is the <a href="https://archivesofcalifornia.com/">Archives of California</a>, the
- Savage transcripts at the Bancroft Library, the only surviving copy of the province's
- government archive after 1906.</p>
+ Savage transcripts at the Bancroft Library, the principal surviving record of the province's
+ government archive after the originals burned in 1906.</p>
 </div>
 
 <div class="cols">
-
- <div class="sec"><div class="sechead">The Projects</div></div>
-
- <div class="art">
-  <img class="cut mono tall" src="assets/ms-croix.jpg" alt="Savage transcript leaf, 1778">
+<div class="sec"><div class="sechead">The Projects</div></div>
+<div class="grid3">
+<div class="stack">
+<div class="art">
+  <a class="thumb" href="https://archivesofcalifornia.com/" aria-label="Open the project"><img class="cut mono tall" src="assets/ms-croix.jpg" alt="Savage transcript leaf, 1778"></a>
   <div class="cutcap">Bando of Teodoro de Croix, 22 March 1778. C&ndash;A 1.</div>
   <div class="kick">No. I</div>
   <h3><a href="https://archivesofcalifornia.com/">Archives of California</a></h3>
   <p class="deck">A documentary calendar of the Savage transcripts</p>
   <p>Volume by volume, each entry keyed to its manuscript leaf, with both page systems recorded and every document linked to the scan it was read from.</p>
-  <span class="fig">34,899 documents &middot; 63 volumes</span>
+  <span class="fig">34,972 documents &middot; 63 volumes</span>
  </div>
-
- <div class="art">
-  <img class="cut wide" src="assets/gov-charts.jpg" alt="The north-south civil conflicts of Mexican California in five snapshot panels">
-  <div class="cutcap">North against South: five civil conflicts in five snapshots &mdash; one of the five charts.</div>
-  <div class="kick">No. II</div>
-  <h3><a href="https://archivesofcalifornia.com/government.html">How California Was Governed</a></h3>
-  <p class="deck">Five charts of the political system, 1697&ndash;1854</p>
-  <p>The chain of command from Crown to neophyte, the division of 1804, the Mexican system, the five north&ndash;south civil wars, and the capitals in law against the capitals in fact. Every box and bar is cited to a record of the archive.</p>
-  <span class="fig">5 charts &middot; every claim sourced</span>
- </div>
-
- <div class="art">
-  <img class="cut wide" src="assets/ranchos-map.jpg" alt="The land grants mapped and coloured by governor">
+<div class="art">
+  <a class="thumb" href="https://ranchos.archivesofcalifornia.com/" aria-label="Open the project"><img class="cut wide" src="assets/ranchos-map.jpg" alt="The land grants mapped and coloured by governor"></a>
   <div class="cutcap">The register mapped: 535 grants, coloured by the governor who made each.</div>
-  <div class="kick">No. III</div>
+  <div class="kick">No. IV</div>
   <h3><a href="https://ranchos.archivesofcalifornia.com/">Ranchos de Alta California</a></h3>
   <p class="deck">A register of the land grants</p>
   <p>Every grant and claim, mapped where a surveyed boundary survives, with the diseños, the grantee dynasties and the registered cattle brands.</p>
   <span class="fig">672 grants &middot; 535 mapped</span>
  </div>
-
- <div class="art">
-  <img class="cut mono pad" src="assets/brands.jpg" alt="Registered California cattle brands">
-  <div class="cutcap">Registered brands, 1822&ndash;1859.</div>
-  <div class="kick">Specimen</div>
-  <h3><a href="https://ranchos.archivesofcalifornia.com/brands/">The Brands</a></h3>
-  <p class="deck">Marks of ownership, recorded in the county books</p>
-  <p>Each rancho registered its hierro. The marks survive in the brand books where the boundaries did not.</p>
+<div class="art">
+  <img class="cut wide" src="assets/atlas-sanpasqual.jpg" alt="San Pasqual, 6 December 1846: the lance mêlée on terrain, California Military Atlas plate I">
+  <div class="cutcap">San Pasqual, 6 December 1846: the mêlée, from Plate I.</div>
+  <div class="kick">No. VI &middot; In preparation</div>
+  <h3>California Military Atlas</h3>
+  <p class="deck">The engagements of early California, plate by plate</p>
+  <p>Battles and campaigns reconstructed phase by phase on real terrain, in the manner of the classic military atlases. Every unit, strength and movement is drawn from the sources, and every disputed point is left standing.</p>
+  <span class="fig">25 plates planned &middot; 5 drafted</span>
  </div>
-
- <div class="art">
-  <img class="cut wide" src="assets/maps-frontier.jpg" alt="The imperial frontier of San Francisco Bay in pictorial symbols: ships at their anchorages, presidio, missions">
+</div>
+<div class="stack">
+<div class="art">
+  <a class="thumb" href="https://maps.archivesofcalifornia.com/" aria-label="Open the project"><img class="cut wide" style="aspect-ratio:4/3" src="assets/maps-frontier.jpg" alt="The imperial frontier of San Francisco Bay in pictorial symbols: ships at their anchorages, presidio, missions"></a>
   <div class="cutcap">The Bay Area imperial frontier: every ship at its anchorage, every establishment in its symbol.</div>
-  <div class="kick">No. IV</div>
+  <div class="kick">No. II</div>
   <h3><a href="https://maps.archivesofcalifornia.com/">California History Maps</a></h3>
   <p class="deck">Interactive cartography of the archival record</p>
   <p>Expeditions, engagements and imperial contests reconstructed point by point. Every pin carries its source; uncertain locations are drawn so you can see the uncertainty.</p>
-  <span class="fig">13 maps &middot; 1,380+ features &middot; pictorial symbols</span>
+  <span class="fig">15+ maps &middot; 2,900+ features &middot; pictorial symbols</span>
  </div>
-
- <div class="art specimen">
+<div class="art">
+  <a class="thumb" href="https://archivesofcalifornia.com/government.html" aria-label="Open the project"><img class="cut wide" src="assets/gov-charts.jpg" alt="The north-south civil conflicts of Mexican California in five snapshot panels"></a>
+  <div class="cutcap">North against South: five civil conflicts in five snapshots &mdash; one of the five charts.</div>
+  <div class="kick">No. V</div>
+  <h3><a href="https://archivesofcalifornia.com/government.html">How California Was Governed</a></h3>
+  <p class="deck">Five charts of the political system, 1697&ndash;1854</p>
+  <p>The chain of command from Crown to neophyte, the division of 1804, the Mexican system, the five north&ndash;south civil wars, and the capitals in law against the capitals in fact. Every box and bar is cited to a record of the archive.</p>
+  <span class="fig">5 charts &middot; every claim sourced</span>
+ </div>
+<div class="art">
+  <img class="cut mono wide" style="object-position:center top;aspect-ratio:4/3" src="assets/presidio-return.jpg" alt="Province artillery return, Monterey, 7 December 1830, Savage transcript">
+  <div class="cutcap">Artillery of the four presidios, 7 December 1830. C&ndash;A 18.</div>
+  <div class="kick">No. VII &middot; In progress</div>
+  <h3>The Presidio Register</h3>
+  <p class="deck">The garrisons of Alta California, year by year</p>
+  <p>A register of the presidial companies, 1770s&ndash;1840s, built from the provincial government&rsquo;s own returns: troop strength, arms, horses and artillery, each figure tied to the manuscript leaf it was read from.</p>
+  <span class="fig">In progress</span>
+ </div>
+</div>
+<div class="stack">
+<div class="art">
+  <a class="thumb" href="https://ships.archivesofcalifornia.com/" aria-label="Open the project"><img class="cut wide" src="assets/ships-traffic.jpg" alt="Vessel traffic to the Californias by flag, 1769 to 1846"></a>
+  <div class="cutcap">Traffic by flag, 1769&ndash;1846, from the registry itself.</div>
+  <div class="kick">No. III</div>
+  <h3><a href="https://ships.archivesofcalifornia.com/">California Ship Registry</a></h3>
+  <p class="deck">Documented vessel visits to the Californias</p>
+  <p>Each visit cited to the archival or published source it rests on, with flags, anchorages and outcomes.</p>
+  <span class="fig">2,070 visits &middot; 399 vessels</span>
+ </div>
+<div class="art specimen">
   <div class="sechead">From the Archive</div>
 <div class="arch" id="fromarchive">
   <button class="plate" id="archPlate" aria-label="Open this sheet in the viewer">
@@ -401,50 +461,47 @@ h1{color:#F1E7D2}
 </div>
 
 </div>
-
- <div class="art">
-  <img class="cut wide" src="assets/ships-traffic.jpg" alt="Vessel traffic to the Californias by flag, 1769 to 1846">
-  <div class="cutcap">Traffic by flag, 1769&ndash;1846, from the registry itself.</div>
-  <div class="kick">No. V</div>
-  <h3><a href="https://ships.archivesofcalifornia.com/">California Ship Registry</a></h3>
-  <p class="deck">Documented vessel visits to the Californias</p>
-  <p>Each visit cited to the archival or published source it rests on, with flags, anchorages and outcomes. Currently a draft release.</p>
-  <span class="fig">2,072 visits &middot; 400 vessels</span>
+<div class="art">
+  <a class="thumb" href="https://ranchos.archivesofcalifornia.com/brands/" aria-label="Open the project"><img class="cut mono pad" src="assets/brands.jpg" alt="Registered California cattle brands"></a>
+  <div class="cutcap">Registered brands, 1822&ndash;1859.</div>
+  <div class="kick">Specimen</div>
+  <h3><a href="https://ranchos.archivesofcalifornia.com/brands/">The Brands</a></h3>
+  <p class="deck">Marks of ownership, recorded in the county books</p>
+  <p>Each rancho registered its hierro. The marks survive in the brand books where the boundaries did not.</p>
  </div>
+</div>
+</div>
+</div>
 
- <div class="art">
-  <img class="cut lockup" src="assets/alcalde-brand.jpg" alt="Alcalde Books">
-  <div class="kick">No. VI</div>
-  <h3><a href="https://alcaldebooks.com/">Alcalde Books</a></h3>
-  <p class="deck">Californian &amp; Western Americana</p>
-  <p>A curated shop of history and rare books, selected and described by a trained historian.</p>
- </div>
-
- <div class="sec"><div class="sechead">Published Datasets</div></div>
-
- <div class="pub"><span class="rn">I.</span> Coyne, Aodhan. <cite>Archives of California: A Documentary Calendar of the Savage Transcripts (BANC MSS C-A)</cite>. Version 1.1.0. Zenodo, 13 August 2026.<br><a href="https://doi.org/10.5281/zenodo.21327098">doi.org/10.5281/zenodo.21327098</a></div>
- <div class="pub"><span class="rn">II.</span> Coyne, Aodhan. <cite>Ranchos of California: A Register of the Land Grants of Alta California</cite>. Version 1.0.0. Zenodo, 31 August 2026.<br><a href="https://doi.org/10.5281/zenodo.22185500">doi.org/10.5281/zenodo.22185500</a></div>
- <div class="pub"><span class="rn">III.</span> Coyne, Aodhan. <cite>California Ship Registry, 1769&ndash;1846: A Documentary Register of Vessel Visits to the Californias</cite>. Zenodo, 26 August 2026.<br><a href="https://doi.org/10.5281/zenodo.22105908">doi.org/10.5281/zenodo.22105908</a></div>
-
- <div class="sec"><div class="sechead">Writing</div></div>
- <div class="art"><p><i>In preparation.</i></p></div>
-
-
+<div class="lower lower2">
+<div class="cell ca"><div class="sec"><div class="sechead">Published Datasets</div></div>
+<div class="pub"><span class="rn">I.</span> Coyne, Aodhan. <cite>Archives of California: A Documentary Calendar of the Savage Transcripts (BANC MSS C-A)</cite>. Version 1.1.0. Zenodo, 13 August 2026.<br><a href="https://doi.org/10.5281/zenodo.21327098">doi.org/10.5281/zenodo.21327098</a></div>
+<div class="pub"><span class="rn">II.</span> Coyne, Aodhan. <cite>Ranchos of California: A Register of the Land Grants of Alta California</cite>. Version 1.0.0. Zenodo, 31 August 2026.<br><a href="https://doi.org/10.5281/zenodo.22185500">doi.org/10.5281/zenodo.22185500</a></div>
+<div class="pub"><span class="rn">III.</span> Coyne, Aodhan. <cite>California Ship Registry, 1769&ndash;1846: A Documentary Register of Vessel Visits to the Californias</cite>. Zenodo, 26 August 2026.<br><a href="https://doi.org/10.5281/zenodo.22105908">doi.org/10.5281/zenodo.22105908</a></div></div>
+<div class="cell cb">
 <div class="sec author">
   <div class="sechead">The Author</div>
   <div class="art bio">
     <p class="who">Aodhan Coyne</p>
-    <p>I work on the history of early California, from 1769 to the American conquest, and on making the archives of that period usable. My principal project is Archives of California, a document-level calendar of the Savage transcripts at the Bancroft Library, the copies that remain after the originals were destroyed in 1906. I am extending it beyond Savage to the other nineteenth-century compilers who worked from the same records, among them Hittell and Eldredge, and cross-referencing it with the pueblo archives of San José and Los Angeles, with further collections to follow. The aim is a cross-archive index of early California, one that lets a person or a document be followed across collections. Alongside it I maintain a register of the Spanish and Mexican land grants, a registry of ship arrivals to the Californias, and a series of historical maps. All of it is published openly and added to continually. B.A. in History, University of California, Berkeley (2025).</p>
+    <p>I work on the history of early California, from 1769 to the American conquest, and on making the archives of that period usable. My principal project is Archives of California, a document-level calendar of the Savage transcripts at the Bancroft Library, the copies that remain after the originals were destroyed in 1906. I am extending it beyond Savage to the other nineteenth-century compilers who worked from the same records, among them Hittell and Eldredge, and cross-referencing it with the pueblo archives of San José and Los Angeles, with further collections to follow. I am now following the copies the provincial government sent up its chain of command to Mexico City and Spain, and matching them, leaf by leaf, to the documents in the Archivo General de la Naci&oacute;n and the Archivo General de Indias. The aim is a cross-archive index of early California, one that lets a person or a document be followed across collections. Alongside it I maintain a register of the Spanish and Mexican land grants, a registry of ship arrivals to the Californias, and a series of historical maps. All of it is published openly and added to continually. B.A. in History, University of California, Berkeley (2025).</p>
     <p class="orcidline">ORCID <a href="https://orcid.org/0009-0002-8630-3768">0009-0002-8630-3768</a></p>
   </div>
-</div>
-</div>
 
+ </div>
+</div>
+<div class="cell cc"><div class="sec"><div class="sechead">Research Interests</div></div>
+<div class="art"><p>Spanish and Mexican California, 1769&ndash;1846; early American California, 1846&ndash;1879, especially its political history before the second constitutional convention; the Spanish and Mexican borderlands; colonial government and its dealings with foreign powers and Native nations; military and presidial history; Russian, British and American presence on the Pacific coast; archival method and digital history.</p></div></div>
+<div class="cell cd"><div class="sec"><div class="sechead">Writing</div></div>
+<div class="art"><p><i>In preparation.</i></p><p>&ldquo;Indian Raiding and the Collapse of Mexican California.&rdquo;</p><p>Article on Californio political institutions across the American conquest, developed from the senior thesis.</p></div></div>
+<div class="cell ce"><div class="sec"><div class="sechead">Teaching</div></div>
+<div class="art"><p><b>Educator</b>, San Francisco Maritime National Park Association (2026&ndash;present). I teach California and maritime history through hands-on programs aboard the Association&rsquo;s historic ships, for audiences from fourth-grade classes to historical societies and the public.</p></div></div>
+</div>
 <div class="colophon">
  <img class="colmark" src="assets/ac-mark-gold.svg?v=2" alt="" width="26" height="26">
  <a href="https://orcid.org/0009-0002-8630-3768">ORCID 0009-0002-8630-3768</a> &nbsp;·&nbsp;
  <a href="https://github.com/Aodhanm">GitHub</a> &nbsp;·&nbsp;
- <a href="mailto:aodhancoyne@gmail.com">aodhancoyne@gmail.com</a><br>
+ <a href="mailto:aodhancoyne@gmail.com">aodhancoyne@gmail.com</a> &nbsp;·&nbsp;
+ <a href="https://alcaldebooks.com/">Alcalde Books</a><br>
  Datasets CC BY 4.0, code MIT. Corrections welcome and logged in each project's errata.
  <a class="mark" href="https://games.aodhancoyne.com/" aria-label="Games">&#10087;</a>
 </div>
